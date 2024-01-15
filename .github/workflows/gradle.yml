@@ -56,4 +56,4 @@ jobs:
           --application-name memore \
           --deployment-config-name CodeDeployDefault.AllAtOnce \
           --deployment-group-name memore-springboot-webservice-group \
-          --s3-location bucket=aws-codedeploy-ap-northeast-2,key=springboot-githubactions.zip,bundleType=zip
+          --s3-location bucket=memore-springboot-build,key=springboot-githubactions.zip,bundleType=zip
