@@ -49,7 +49,7 @@ jobs:
         aws-region: ap-northeast-2
     
     - name: Upload to S3
-      run: aws s3 cp ./springboot-githubactions.zip s3://memore-springboot-build
+      run: aws s3 cp deploy/springboot-githubactions.zip s3://memore-springboot-build
 
     - name: Code Deploy
       run: |
