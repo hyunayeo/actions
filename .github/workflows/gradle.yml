@@ -36,9 +36,10 @@ jobs:
 
     - name: Before deploy
       run: |
+        zip -r actions *
         mkdir -p deploy
-        cp ./build/libs/*.jar ./deploy
-        zip -r ./springboot-githubactions.zip ./deploy
+        mv actions.zip deploy/springboot-githubactions.zip
+        
         
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@0e613a0980cbf65ed5b322eb7a1e075d28913a83
