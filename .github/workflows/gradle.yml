@@ -49,3 +49,11 @@ jobs:
     
     - name: Upload to S3
       run: aws s3 cp ./springboot-githubactions.zip s3://memore-springboot-build
+
+    - name: Code Deploy
+      run: |
+          aws deploy create-deployment \
+          --application-name memore \
+          --deployment-config-name CodeDeployDefault.AllAtOnce \
+          --deployment-group-name memore-springboot-webservice-group \
+          --s3-location bucket=aws-codedeploy-ap-northeast-2,key=springboot-githubactions.zip,bundleType=zip
